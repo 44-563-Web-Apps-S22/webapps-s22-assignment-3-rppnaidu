@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        table,td,th{
+            border: 1px solid;
+        }
+    </style>
 <head>
 <title>About Myself</title>
 </head>
@@ -31,4 +36,69 @@
     <li> Sri Ramu sweets near sarovar petrol bunk.</li>
 </ul>
 <a href="Aboutme.html">Link to Aboutme</a>
+
+<hr>
+<h3>Adding Table</h3>
+<table>
+    <tr>
+        <th>Game</th>
+        <th>Location</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+         <td>Hockey</td>
+         <td>Gosala</td>
+         <td>54$</td>
+    </tr>
+    <tr>
+         <td>Cricket</td>
+         <td>Dharmasala</td>
+         <td>65$</td>
+    </tr>
+    <tr>
+         <td>Badminton</td>
+         <td>Ahmedabad</td>
+         <td>77$</td>
+    </tr>
+    <tr>
+         <td>Archery</td>
+         <td>Luckman's Palace</td>
+         <td>34$</td>
+    </tr>
+
+ </table>
+
+<hr>
+<h3>Algorithm-Data Structures</h3>
+<blockquote>
+    There are many algorithms for different purposes. They interact with different data structures in the same computational complexity scale. Think of algorithms as dynamic underlying pieces that interact with static data structures.
+
+The way data is expressed in code is flexible. Once you understand how algorithms are built,
+ you can generalize across different programming languages. In a sense, it’s a bit like knowing 
+ how a related family of languages work syntactically. Once you glimpse the fundamental rules 
+ behind programming languages and their organizing principles,
+ you can more easily switch between the different languages and learn each faster.
+</blockquote>
+
+<a href="https://www.springboard.com/blog/software-engineering/data-structures-and-algorithms/#h2">Link to Source</a>
+<h4> Sparse Table - Range sum queries</h4>
+<pre>
+    long long st[MAXN][K + 1];
+
+for (int i = 0; i < N; i++)
+    st[i][0] = array[i];
+
+for (int j = 1; j <= K; j++)
+    for (int i = 0; i + (1 << j) <= N; i++)
+        st[i][j] = st[i][j-1] + st[i + (1 << (j - 1))][j - 1];
+        long long sum = 0;
+        for (int j = K; j >= 0; j--) {
+            if ((1 << j) <= R - L + 1) {
+                sum += st[L][j];
+                L += 1 << j;
+            }
+        }
+</pre>
+<a href="https://cp-algorithms.com/data_structures/sparse-table.html">Link to Code</a>
+
 </html>
